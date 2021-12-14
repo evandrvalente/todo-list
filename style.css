@@ -1,0 +1,11 @@
+.toDo {
+
+}
+
+li {
+    line-height: 2em;
+}
+
+.selected-task {
+    background-color: rgb(128, 128, 128);
+}
