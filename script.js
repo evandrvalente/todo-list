@@ -13,7 +13,10 @@ function addTask (){
     let newElement = document.createElement("li");
     newElement.innerText = newTask;
     /*Queria saber se era possível atribuir um ID já na 
-    criação do elemento, só de curiosidade mesmo. */
+    criação do elemento, só de curiosidade mesmo. 
+    É possivel elaborar diversos métodos para montar um ID que
+    seja exclusivo, utilizei o tempo por ser bem simples, funcional e o mais rápido 
+    para o momento*/
     const dN = Date.now();
     const nID = dN - d0;
     const taskId = "task" + nID;
@@ -56,12 +59,24 @@ function clearAll(){
         taskList.removeChild(taskList.firstChild);
     };
 };
+delAllBtn.addEventListener("click", clearAll);
+
 
 //limpar somente os finalizados
-
-let c = document.querySelectorAll('.completed');
 function clearCompleted(){
-    for (let s = 0; s < c.length; s += 1) {
-        console.log(c[s]);
-    };
+    document.querySelectorAll('.completed').forEach(
+        function(elemento){elemento.remove()}
+    );
+/*Inicialmente eu estava tentando fazer essa parte utilizando 'laço for', 
+porém estava com dificuldade em remover o elemento do nó, pois embora no console 
+a variável que atribuí à saída deste queryselector retornava a array com os elementos 
+que eu queria, ao executar dentro da função estava retornando 'undefined'. 
+Ao pesquisar, encontrei sugestões de tratar esta saída como um array qualquer 
+então tentar utilizar o 'forEach'.
+Referências:
+https://www.ti-enxame.com/pt/javascript/como-remover-elementos-que-foram-buscados-usando-queryselectorall/1068825013/
+https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+https://blog.betrybe.com/javascript/javascript-foreach/
+*/
 };
+delDoneBtn.addEventListener("click", clearCompleted);
