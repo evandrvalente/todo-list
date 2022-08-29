@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Ev Dev's To Do List Project</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <header id="task-list-header">
-        <h1 id="my-task-list-title">Minha Lista de Tarefas</h1>
-        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-    </header>
-    <section id="user-editor-section">
-        <label for="board-size">Nova tarefa</label>
-        <input id="texto-tarefa" type="text">
-        <button id="criar-tarefa">Adicionar</button>
-    </section>
-    <section id="shortcuts">
-        <button id="apaga-tudo">Remover tudo</button>
-        <button id="remover-finalizados">Remover finalizados</button>
-        <button id="salvar-tarefas">Salvar</button>
-    </section>
-    <section id="task-list-manager">
-        <ol id="lista-tarefas">
-        </ol>
-    </section>
+    <div class="container">
+        <header id="task-list-header" class="header">
+            <h3 id="my-task-list-title">Minha Lista de Tarefas</h3>
+            <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        </header>
+        <section id="user-editor-section" class="user-editor">
+            <label for="board-size">Nova tarefa</label>
+            <input id="texto-tarefa" type="text">
+            <button id="criar-tarefa">Adicionar</button>
+        </section>
+        <section id="shortcuts" class="controls">
+            <button id="apaga-tudo">Remover tudo</button>
+            <button id="remover-finalizados">Remover finalizados</button>
+            <button id="salvar-tarefas">Salvar</button>
+        </section>
+        <section id="task-list-manager" class="tasklist">
+            <ol id="lista-tarefas">
+            </ol>
+        </section>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

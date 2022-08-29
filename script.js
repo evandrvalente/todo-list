@@ -32,7 +32,10 @@ function addTask (){
 };
 
 addTaskBtn.addEventListener("click", addTask);
-
+taskEditor.addEventListener("keyup", e => {
+    let userTask = taskEditor.value.trim();
+    if(e.key == "Enter" && userTask) {addTask()}}
+);
 
 //selecionar
 function handleChangeTask(event){
