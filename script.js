@@ -5,6 +5,7 @@ const taskList = document.getElementById("lista-tarefas");
 const tList = document.getElementsByTagName("li");
 const delAllBtn = document.getElementById("apaga-tudo");
 const delDoneBtn = document.getElementById("remover-finalizados");
+const saveBtn = document.getElementById("salvar-tarefas");
 const d0 = 1639442823951;
 
 //criar função para adicionar tarefa à lista
@@ -80,3 +81,17 @@ https://blog.betrybe.com/javascript/javascript-foreach/
 */
 };
 delDoneBtn.addEventListener("click", clearCompleted);
+
+function saveList(){
+    const listItens = document.querySelectorAll("li") ;
+    console.log(listItens);
+    localStorage.setItem('list', JSON.stringify(listItens));
+    updateList()
+}
+
+function updateList(){
+    const recList = localStorage.getItem('list');
+    console.log(recList)
+}
+
+saveBtn.addEventListener("click", saveList);
